@@ -15,7 +15,41 @@ module.exports = {
     });
   },
 
-  // getPost: function(req, res) {
-  //   Post.findOne({id: req.params.id}, func)
-  // }
+  getPosts: function(req, res) {
+    Post.find({}, function(err, posts) {
+      if (err) {
+        res.status(400).json(err);
+      }
+      res.status(200).json(posts);
+    });
+  },
+
+  getPost: function(req, res) {
+    Post.findById(req.params.id, function(err, post) {
+      if (err) {
+        res.status(400).json(err);
+      }
+      res.status(200).json(post);
+    });
+  },
+
+  updatePost: function(req, res) {
+    Post.update(req.params.id, req.body, function(err, updatedpost) {
+      if (err) {
+        res.status(400).json(err);
+      }
+      res.status(200).json(updatedpost);
+    });
+  },
+
+  deletePost: function(req, res) {
+    Post.remove({ _id: req.params.id }, function(err, deleted) {
+      if (err) {
+        res.status(400).json(err);
+      }
+      res.status(200).json({
+        message: 'deleted'
+      });
+    });
+  }
 }

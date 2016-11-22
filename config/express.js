@@ -15,5 +15,7 @@ module.exports = function(app) {
   app.use(bodyParser.json());
   app.use(express.static('./public/'));
 
+  require('../app/routes/postroute')(app);
+  
   return app;
 };
