@@ -1,0 +1,21 @@
+{
+  "name": "blogr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "test": "./node_modules/.bin/jasmine-node spec/blogspec.js"
+  },
+  "author": "susan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.8",
+    "supertest": "^2.0.1"
+  },
+  "devDependencies": {
+    "supertest": "^2.0.1"
+  }
+}
